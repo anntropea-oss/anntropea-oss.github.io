@@ -395,7 +395,7 @@ h3 {
 }
 
 .repo-grid {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .repo-card {
@@ -417,8 +417,14 @@ h3 {
   text-decoration: none;
 }
 
-.repo-card a {
+.repo-card > a,
+.repo-links {
   margin-top: 22px;
+}
+
+.repo-links {
+  display: grid;
+  gap: 10px;
 }
 
 .text-link {

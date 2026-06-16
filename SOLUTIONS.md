@@ -405,3 +405,11 @@
 - Files Changed: SOLUTIONS.md
 - Status: Workaround
 - Verification: `curl` returned `200` for `https://anntropea-oss.github.io/sitemap.xml` with no redirect, and `xmllint` validated the local sitemap XML.
+
+## [2026-06-16 14:09] Browser Viewport Capability Docs Missing
+- Problem: The optional browser viewport capability documentation file was not present at the expected plugin path during SOP card layout verification.
+- Root Cause: Unknown; the browser skill referenced generated capability docs that were not available in the local plugin cache path.
+- Solution: Avoided the unavailable viewport capability and verified the SOP card with the active browser session plus local HTTP and link checks.
+- Files Changed: SOLUTIONS.md
+- Status: Workaround
+- Verification: The browser check confirmed the SOP card is visible, both card links are present with `_blank`, and no horizontal overflow was detected; local HTTP checks returned `200` for the homepage and sitemap.
