@@ -484,4 +484,12 @@
 - Solution: Restored normal word wrapping for service-page H1 elements, removed the narrow character-based mobile maximum, and slightly reduced the mobile service-heading size.
 - Files Changed: styles.css, SOLUTIONS.md
 - Status: Resolved
-- Verification: Scheduled a post-deployment browser check at 390 by 844 pixels for all three service-page headlines.
+- Verification: The corrected CSS rules were confirmed locally; a versioned stylesheet URL was then added after the public browser revealed stale CDN CSS.
+
+## [2026-06-19 12:01] GitHub Pages Served Stale Service-Page CSS
+- Problem: After the mobile heading fix was deployed and Pages reported `built`, the public browser still received the previous stylesheet and continued breaking `Communication` inside the word.
+- Root Cause: The shared `styles.css` URL was cached by the GitHub Pages CDN or browser, so the unchanged asset URL did not immediately resolve to the new CSS content.
+- Solution: Added a version query to the stylesheet reference on the homepage and all three service pages to force retrieval of the corrected CSS.
+- Files Changed: index.html, print-publication-consulting/index.html, sop-process-documentation/index.html, higher-education-communications/index.html, SOLUTIONS.md
+- Status: Resolved
+- Verification: Scheduled a final public mobile browser check after the versioned HTML deployment reports built.
