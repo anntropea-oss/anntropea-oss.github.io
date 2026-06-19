@@ -477,3 +477,11 @@
 - Files Changed: SOLUTIONS.md
 - Status: Workaround
 - Verification: The escalated `git add` completed successfully and saved an approval rule for that exact staging command prefix.
+
+## [2026-06-19 11:54] Service Page Headline Broke Inside Word on Mobile
+- Problem: The higher education service-page headline displayed `Communication` with the final letter wrapped onto a separate line at a 390-pixel viewport.
+- Root Cause: The global heading rule used `overflow-wrap: anywhere`, and the mobile service heading was constrained to `11ch`.
+- Solution: Restored normal word wrapping for service-page H1 elements, removed the narrow character-based mobile maximum, and slightly reduced the mobile service-heading size.
+- Files Changed: styles.css, SOLUTIONS.md
+- Status: Resolved
+- Verification: Scheduled a post-deployment browser check at 390 by 844 pixels for all three service-page headlines.
