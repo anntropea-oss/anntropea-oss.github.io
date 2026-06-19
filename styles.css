@@ -119,6 +119,61 @@ a {
   max-width: 760px;
 }
 
+.service-hero {
+  position: relative;
+  min-height: 610px;
+  overflow: hidden;
+  display: grid;
+  align-items: end;
+  padding: 92px clamp(20px, 5vw, 72px) 60px;
+  border-bottom: 1px solid var(--line);
+}
+
+.service-hero-image,
+.service-hero-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.service-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.service-hero-overlay {
+  background: linear-gradient(90deg, rgba(247, 244, 237, 0.98) 0%, rgba(247, 244, 237, 0.9) 52%, rgba(247, 244, 237, 0.35) 100%);
+}
+
+.service-hero-content {
+  position: relative;
+  width: 100%;
+  max-width: 880px;
+}
+
+.service-hero h1 {
+  max-width: 14ch;
+  font-size: 4.8rem;
+}
+
+.breadcrumb {
+  display: inline-flex;
+  margin-bottom: 28px;
+  color: var(--forest);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.breadcrumb::before {
+  content: "\2190";
+  margin-right: 8px;
+}
+
+.breadcrumb:hover {
+  text-decoration: underline;
+}
+
 .kicker {
   margin: 0 0 14px;
   color: var(--brick);
@@ -380,8 +435,132 @@ h3 {
 }
 
 .service-card {
+  display: flex;
+  flex-direction: column;
   min-height: 250px;
   box-shadow: var(--shadow);
+}
+
+.service-card > a {
+  margin-top: auto;
+  padding-top: 22px;
+  color: var(--forest);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.service-card > a:hover {
+  text-decoration: underline;
+}
+
+.service-intro,
+.related-services {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.85fr) minmax(300px, 1.15fr);
+  gap: clamp(28px, 6vw, 82px);
+  align-items: start;
+}
+
+.service-copy {
+  display: grid;
+  gap: 22px;
+}
+
+.service-copy p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.22rem;
+  line-height: 1.65;
+}
+
+.service-details {
+  background: #fbfaf5;
+  border-block: 1px solid var(--line);
+}
+
+.detail-grid,
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.detail-grid article,
+.proof-item,
+.proof-feature {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 26px;
+}
+
+.detail-grid article {
+  min-height: 300px;
+}
+
+.detail-grid .card-index {
+  margin-bottom: 52px;
+}
+
+.detail-grid p,
+.proof-item p,
+.proof-feature p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.proof-item {
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+}
+
+.proof-item > a {
+  margin-top: auto;
+  padding-top: 22px;
+  color: var(--forest);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.proof-item > a:hover {
+  text-decoration: underline;
+}
+
+.proof-feature {
+  display: grid;
+  grid-template-columns: minmax(300px, 1.2fr) minmax(240px, 0.8fr);
+  gap: clamp(26px, 5vw, 68px);
+  align-items: center;
+}
+
+.proof-feature h3 {
+  max-width: 24ch;
+  font-size: 2rem;
+}
+
+.proof-actions,
+.related-links {
+  display: grid;
+  gap: 12px;
+}
+
+.related-services {
+  background: #f7f4ed;
+  border-top: 1px solid var(--line);
+}
+
+.related-links a {
+  padding: 18px 0;
+  color: var(--forest);
+  border-top: 1px solid var(--line);
+  font-size: 1.1rem;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.related-links a:hover {
+  text-decoration: underline;
 }
 
 .resume {
@@ -564,6 +743,15 @@ h3 {
   .service-grid {
     grid-template-columns: 1fr;
   }
+
+  .service-hero h1 {
+    font-size: 4rem;
+  }
+
+  .detail-grid,
+  .proof-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 720px) {
@@ -604,10 +792,28 @@ h3 {
     max-width: 100%;
   }
 
+  .service-hero {
+    min-height: 660px;
+    align-items: start;
+    padding-top: 74px;
+  }
+
+  .service-hero-overlay {
+    background: linear-gradient(180deg, rgba(247, 244, 237, 0.99) 0%, rgba(247, 244, 237, 0.93) 68%, rgba(247, 244, 237, 0.35) 100%);
+  }
+
+  .service-hero h1 {
+    max-width: 11ch;
+    font-size: 2.65rem;
+  }
+
   .intro,
   .contact,
   .process-list li,
-  .split-heading {
+  .split-heading,
+  .service-intro,
+  .related-services,
+  .proof-feature {
     grid-template-columns: 1fr;
   }
 
@@ -621,6 +827,11 @@ h3 {
   .qualification-grid,
   .repo-grid,
   .speaking-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-grid,
+  .proof-grid {
     grid-template-columns: 1fr;
   }
 

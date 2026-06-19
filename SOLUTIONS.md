@@ -413,3 +413,67 @@
 - Files Changed: SOLUTIONS.md
 - Status: Workaround
 - Verification: The browser check confirmed the SOP card is visible, both card links are present with `_blank`, and no horizontal overflow was detected; local HTTP checks returned `200` for the homepage and sitemap.
+
+## [2026-06-19 11:10] Full Visitor Analytics Not Installed
+- Problem: The website does not currently collect full visitor analytics such as sessions, acquisition sources, page engagement, or outbound-link clicks.
+- Root Cause: No Google Analytics, Plausible, Umami, or similar analytics tag has been added to the static site.
+- Solution: Documented the existing Search Console and GitHub traffic options; full visitor analytics remains available as a future GA4 or privacy-focused analytics setup.
+- Files Changed: SOLUTIONS.md
+- Status: Open
+- Verification: Searched `index.html`, `script.js`, and `README.md` and found no analytics measurement script or configuration.
+
+## [2026-06-19 11:15] Search Visibility Limited to Branded Query
+- Problem: Search Console currently shows only the branded query `ann tropea`, so prospective clients are not yet finding the site through service-related searches.
+- Root Cause: The new one-page site has limited search history and distributes several distinct service topics across a single homepage rather than dedicated intent-focused pages.
+- Solution: Researched and prioritized service-intent keyword clusters, then created dedicated pages for higher education communications, SOP and process documentation, and print publication consulting with unique metadata, visible expertise, proof links, internal links, and sitemap entries.
+- Files Changed: index.html, styles.css, sitemap.xml, higher-education-communications/index.html, sop-process-documentation/index.html, print-publication-consulting/index.html, SOLUTIONS.md
+- Status: Resolved
+- Verification: Confirmed unique titles, descriptions, H1s, canonical URLs, valid JSON-LD, working local links and assets, and four valid sitemap URLs; public indexing and query growth will be monitored in Search Console.
+
+## [2026-06-19 11:22] Service Page Search Snippets Too Long
+- Problem: Initial validation found that the new service-page titles and meta descriptions were long enough to risk truncating the core service phrase or Ann Tropea's name in search results.
+- Root Cause: The first metadata pass attempted to include too many supporting keywords in each title and description.
+- Solution: Shortened the service-page titles and descriptions, preserving one primary intent phrase per title and moving supporting language into the description and visible page copy; also tightened the homepage description.
+- Files Changed: index.html, print-publication-consulting/index.html, sop-process-documentation/index.html, higher-education-communications/index.html, SOLUTIONS.md
+- Status: Resolved
+- Verification: Re-ran metadata length checks and confirmed the shortened titles and descriptions retain the target service phrases and canonical URLs.
+
+## [2026-06-19 11:23] Local Preview Server Blocked by Sandbox
+- Problem: The first attempt to start the static preview server on port 4173 failed with `PermissionError: Operation not permitted`.
+- Root Cause: The managed sandbox blocked the Python process from binding to a local network port.
+- Solution: Restarted the same local preview server with the required managed-environment permission, then moved verification to the public deployment when the approved process proved isolated from the shell and browser.
+- Files Changed: SOLUTIONS.md
+- Status: Workaround
+- Verification: The approved process remained active, but localhost requests could not reach it; structural checks continued locally and HTTP/browser checks were deferred to the public deployment.
+
+## [2026-06-19 11:25] Local Browser Preview Unavailable in Managed Session
+- Problem: Browser verification could not reach the approved localhost preview, the selected browser initially had no active tab, and direct `file://` navigation was blocked by browser security policy.
+- Root Cause: The managed server process, shell, and browser were isolated from one another, while local-file navigation was disallowed by the browser URL policy; the browser plugin cache had also advanced to a new version path since the previous session.
+- Solution: Stopped local browser attempts, retained local structural, metadata, asset, and sitemap validation, and moved visual and HTTP verification to the deployed public HTTPS pages.
+- Files Changed: SOLUTIONS.md
+- Status: Workaround
+- Verification: Local JSON-LD and XML parsing passed; final browser and HTTP checks are scheduled against the public GitHub Pages URLs after deployment.
+
+## [2026-06-19 11:29] Git Staging Blocked by Managed Permissions
+- Problem: Git could not stage the service-page update because it was unable to create `.git/index.lock`; an earlier managed-permission request also remained pending until terminated.
+- Root Cause: The current workspace permission profile grants read-only access to `.git`, so index and commit operations require an explicit managed-environment approval.
+- Solution: Preserved all verified working-tree changes and issued a narrow approval request for the specific Git staging, commit, and push operations needed to deploy them.
+- Files Changed: SOLUTIONS.md
+- Status: Open
+- Verification: The unapproved `git add` failed with `Operation not permitted`, while `git status` continued to show the intended modified and new files in the working tree.
+
+## [2026-06-19 11:47] Codex Manual Fetch Blocked by Sandbox Network
+- Problem: The first attempt to fetch the official Codex manual failed because the sandbox could not resolve `developers.openai.com`.
+- Root Cause: Command network access was restricted in the active managed permission profile.
+- Solution: Re-ran the official manual helper with a narrow approved network escalation and used the current permissions and sandbox documentation to guide the user.
+- Files Changed: SOLUTIONS.md
+- Status: Resolved
+- Verification: The approved helper downloaded a fresh Codex manual and outline to the temporary documentation cache.
+
+## [2026-06-19 11:48] Full Access UI Did Not Match Effective Git Permissions
+- Problem: The Codex app showed Full Access for the thread, but ordinary Git commands still treated `.git` as read-only and failed to create `index.lock`.
+- Root Cause: The app permissions selector and the thread's effective managed command profile were out of sync or the Git-protected-path rule still required an explicit escalation.
+- Solution: Retried the exact staging command with a narrow explicit escalation for the listed website files.
+- Files Changed: SOLUTIONS.md
+- Status: Workaround
+- Verification: The escalated `git add` completed successfully and saved an approval rule for that exact staging command prefix.
