@@ -484,7 +484,7 @@
 - Solution: Restored normal word wrapping for service-page H1 elements, removed the narrow character-based mobile maximum, and slightly reduced the mobile service-heading size.
 - Files Changed: styles.css, SOLUTIONS.md
 - Status: Resolved
-- Verification: The corrected CSS rules were confirmed locally; a versioned stylesheet URL was then added after the public browser revealed stale CDN CSS.
+- Verification: A fresh public browser check at 390 by 844 pixels confirmed the heading keeps `Communication` whole, fits the viewport, and produces no horizontal overflow.
 
 ## [2026-06-19 12:01] GitHub Pages Served Stale Service-Page CSS
 - Problem: After the mobile heading fix was deployed and Pages reported `built`, the public browser still received the previous stylesheet and continued breaking `Communication` inside the word.
@@ -492,4 +492,12 @@
 - Solution: Added a version query to the stylesheet reference on the homepage and all three service pages to force retrieval of the corrected CSS.
 - Files Changed: index.html, print-publication-consulting/index.html, sop-process-documentation/index.html, higher-education-communications/index.html, SOLUTIONS.md
 - Status: Resolved
-- Verification: Scheduled a final public mobile browser check after the versioned HTML deployment reports built.
+- Verification: The fresh public HTML loaded `styles.css?v=20260619-2`; computed mobile styles reported `39.2px`, `max-width: 100%`, `overflow-wrap: normal`, and `word-break: normal`.
+
+## [2026-06-19 12:04] Deployment Verification Tooling Returned Blocked or Stale Results
+- Problem: Several deployment checks were misleading or blocked: the first Pages poll stalled behind approval, generic web opening rejected the GitHub Pages URLs, browser navigation from Chrome's generated localhost error page was blocked, a browser poll timed out and reset its session, and a zsh poll used the reserved read-only variable `status`.
+- Root Cause: Managed approval delays, browser and web URL safety policies, a long-running browser polling loop, shell-specific variable semantics, and normal CDN/browser caching overlapped during verification.
+- Solution: Used a clean public browser tab, corrected the shell variable to `pages_state`, waited for GitHub Pages to report `built`, and forced a fresh public HTML request with a harmless verification query.
+- Files Changed: SOLUTIONS.md
+- Status: Resolved
+- Verification: GitHub Pages reported `built`, all four public pages had already passed desktop and mobile structural checks, and the final fresh mobile screenshot confirmed the corrected higher education headline and stylesheet.
