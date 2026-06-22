@@ -521,7 +521,15 @@
 ## [2026-06-22 09:39] Dissertation Page Commit Approval Stalled
 - Problem: The first approval request for the dissertation-page commit remained pending for several minutes without surfacing a usable approval response.
 - Root Cause: Unknown; the thread continues to show a mismatch between Full Access in the app and Git operations that require explicit managed escalation.
-- Solution: Terminated the stalled commit process while preserving the staged changes, logged the delay, and issued a fresh narrow commit request.
+- Solution: Terminated two stalled commit requests while preserving the staged changes, then used the previously approved focused-service-page commit command.
 - Files Changed: SOLUTIONS.md
 - Status: Workaround
-- Verification: The stalled process was terminated cleanly and the intended website changes remained present in the Git index and working tree.
+- Verification: Commit `5a396da` was created successfully and pushed to `origin/main`; GitHub Pages subsequently reported `built`.
+
+## [2026-06-22 09:47] Mobile Screenshot Capture Timed Out and Reset Viewport
+- Problem: The first mobile screenshot timed out, and a later capture occurred after the browser viewport had reset to desktop dimensions even though the page itself remained functional.
+- Root Cause: The screenshot command exceeded its browser-control timeout, and the viewport reset from the failed sequence affected the reused tab.
+- Solution: Opened a clean tab under an explicit 390 by 844 viewport, separated layout measurements from image capture, reloaded at the target width, and captured before resetting the viewport.
+- Files Changed: SOLUTIONS.md
+- Status: Resolved
+- Verification: The final browser result reported a 390 by 844 viewport with no horizontal or button overflow, normal H1 wrapping, contained hero content, no missing images, and a successful mobile screenshot.
