@@ -533,3 +533,11 @@
 - Files Changed: SOLUTIONS.md
 - Status: Resolved
 - Verification: The final browser result reported a 390 by 844 viewport with no horizontal or button overflow, normal H1 wrapping, contained hero content, no missing images, and a successful mobile screenshot.
+
+## [2026-06-22 10:00] Analytics Tag Patch Did Not Match Service Page Titles
+- Problem: The initial multi-file analytics patch failed while updating the service pages.
+- Root Cause: The patch expected outdated page title text, while the current service pages use revised SEO titles.
+- Solution: Reapplied the GA4 tag using the shared viewport meta element as the stable insertion point on every public HTML page.
+- Files Changed: index.html, print-publication-consulting/index.html, sop-process-documentation/index.html, higher-education-communications/index.html, dissertation-thesis-editing/index.html, SOLUTIONS.md
+- Status: Resolved
+- Verification: Confirmed each public HTML page contains the GA4 loader and configuration for measurement ID G-P4GD9RLXHF.
