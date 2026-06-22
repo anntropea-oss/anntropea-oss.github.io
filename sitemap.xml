@@ -5,7 +5,7 @@
 >
   <url>
     <loc>https://anntropea-oss.github.io/</loc>
-    <lastmod>2026-06-19</lastmod>
+    <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -19,19 +19,25 @@
   </url>
   <url>
     <loc>https://anntropea-oss.github.io/print-publication-consulting/</loc>
-    <lastmod>2026-06-19</lastmod>
+    <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://anntropea-oss.github.io/sop-process-documentation/</loc>
-    <lastmod>2026-06-19</lastmod>
+    <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://anntropea-oss.github.io/higher-education-communications/</loc>
-    <lastmod>2026-06-19</lastmod>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://anntropea-oss.github.io/dissertation-thesis-editing/</loc>
+    <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

@@ -501,3 +501,27 @@
 - Files Changed: SOLUTIONS.md
 - Status: Resolved
 - Verification: GitHub Pages reported `built`, all four public pages had already passed desktop and mobile structural checks, and the final fresh mobile screenshot confirmed the corrected higher education headline and stylesheet.
+
+## [2026-06-22 09:30] Resume PDF Text Extractor Missing
+- Problem: The preferred `pdftotext` utility was unavailable while identifying the public professional email from the resume, and the first relative-path Spotlight metadata lookup did not resolve the PDF.
+- Root Cause: Poppler tools are not installed in the current environment, and `mdls` did not resolve the relative asset path.
+- Solution: Inspected embedded PDF strings instead of installing a dependency and found the resume's existing `mailto:` link.
+- Files Changed: SOLUTIONS.md
+- Status: Workaround
+- Verification: The PDF contains `(mailto:anntropea@gmail.com)`, confirming the address already appears in the publicly downloadable resume.
+
+## [2026-06-22 09:33] Secondary Contact Button Contrast Risk
+- Problem: Adding LinkedIn as a secondary button inside the dark contact band would have inherited a light translucent background and white text, creating weak contrast.
+- Root Cause: The global secondary-button style was designed for light page backgrounds and had no contact-section override.
+- Solution: Added a contact-specific secondary-button style with white text, a transparent background, and a visible light border; versioned the shared stylesheet references to avoid stale CSS.
+- Files Changed: styles.css, index.html, print-publication-consulting/index.html, sop-process-documentation/index.html, higher-education-communications/index.html, dissertation-thesis-editing/index.html, SOLUTIONS.md
+- Status: Resolved
+- Verification: Confirmed the contact override has higher selector specificity than the global secondary-button rule; final visual verification will run on the public deployment.
+
+## [2026-06-22 09:39] Dissertation Page Commit Approval Stalled
+- Problem: The first approval request for the dissertation-page commit remained pending for several minutes without surfacing a usable approval response.
+- Root Cause: Unknown; the thread continues to show a mismatch between Full Access in the app and Git operations that require explicit managed escalation.
+- Solution: Terminated the stalled commit process while preserving the staged changes, logged the delay, and issued a fresh narrow commit request.
+- Files Changed: SOLUTIONS.md
+- Status: Workaround
+- Verification: The stalled process was terminated cleanly and the intended website changes remained present in the Git index and working tree.

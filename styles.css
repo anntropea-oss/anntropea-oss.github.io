@@ -714,6 +714,12 @@ h3 {
   border-color: #fff;
 }
 
+.contact .button.secondary {
+  color: #fff;
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.72);
+}
+
 .site-footer {
   display: flex;
   justify-content: space-between;
