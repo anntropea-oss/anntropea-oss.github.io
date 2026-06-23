@@ -541,3 +541,27 @@
 - Files Changed: index.html, print-publication-consulting/index.html, sop-process-documentation/index.html, higher-education-communications/index.html, dissertation-thesis-editing/index.html, SOLUTIONS.md
 - Status: Resolved
 - Verification: Confirmed each public HTML page contains the GA4 loader and configuration for measurement ID G-P4GD9RLXHF.
+
+## [2026-06-23 15:36] Analytics Report Redirected to Sign-In
+- Problem: The Google Analytics report link could not be inspected from the in-app browser because it redirected to a Google sign-in page instead of showing the Pages and screens report.
+- Root Cause: Google Analytics requires the user's authenticated Google session, which is not available to the browser automation context.
+- Solution: No site code fix was needed; mapped the site's current public page titles and canonical URLs locally so the reported Analytics row can be interpreted from the user's visible report.
+- Files Changed: SOLUTIONS.md
+- Status: Open
+- Verification: Browser navigation to the shared Analytics URL ended at `accounts.google.com`, and local HTML inspection confirmed the site's page-title-to-URL mapping.
+
+## [2026-06-23 15:37] Analytics Report Includes Legacy Doula Paths
+- Problem: Google Analytics displayed page paths including `/copy-of-birth-doula/`, `/birth-doula/`, `/breastfeeding-counseling/`, and `/childbirth-education/`, which do not belong to the current professional portfolio site.
+- Root Cause: Unknown; likely the GA4 property or measurement ID is also receiving historical or current traffic from an older doula-related site or prior site implementation.
+- Solution: No code fix was applied yet; identified the current repo's valid public page paths so the Analytics report can be interpreted and the property can be filtered by hostname.
+- Files Changed: SOLUTIONS.md
+- Status: Open
+- Verification: Local search found no matching page directories or files for the reported doula paths, only doula-related text references on the current homepage.
+
+## [2026-06-23 16:03] Portfolio Analytics Used Mixed GA4 Measurement ID
+- Problem: The professional portfolio site was using GA4 measurement ID `G-P4GD9RLXHF`, which also collected traffic for `mommytreedoula.com` and mixed unrelated doula-site paths into the portfolio analytics report.
+- Root Cause: The portfolio was originally configured with a GA4 tag associated with the existing mixed Analytics property instead of the new portfolio-only GA4 measurement ID.
+- Solution: Replaced `G-P4GD9RLXHF` with the new portfolio-only measurement ID `G-M5VMC4W6X3` on every public HTML page.
+- Files Changed: index.html, print-publication-consulting/index.html, sop-process-documentation/index.html, higher-education-communications/index.html, dissertation-thesis-editing/index.html, SOLUTIONS.md
+- Status: Resolved
+- Verification: Local grep confirmed every public HTML page loads and configures `G-M5VMC4W6X3`, with no remaining `G-P4GD9RLXHF` references in those pages.
