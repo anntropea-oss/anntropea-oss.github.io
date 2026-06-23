@@ -564,4 +564,12 @@
 - Solution: Replaced `G-P4GD9RLXHF` with the new portfolio-only measurement ID `G-M5VMC4W6X3` on every public HTML page.
 - Files Changed: index.html, print-publication-consulting/index.html, sop-process-documentation/index.html, higher-education-communications/index.html, dissertation-thesis-editing/index.html, SOLUTIONS.md
 - Status: Resolved
-- Verification: Local grep confirmed every public HTML page loads and configures `G-M5VMC4W6X3`, with no remaining `G-P4GD9RLXHF` references in those pages.
+- Verification: Local grep confirmed every public HTML page loads and configures `G-M5VMC4W6X3`, with no remaining `G-P4GD9RLXHF` references in those pages; after deployment, the live homepage source served the new loader and config ID.
+
+## [2026-06-23 16:08] Deployment Verification Blocked by Restricted Network
+- Problem: The first GitHub Pages status poll and live-source fetch failed with network errors, including inability to connect to `api.github.com` and resolve `anntropea-oss.github.io`.
+- Root Cause: Network access is restricted in the managed command environment unless explicitly approved.
+- Solution: Re-ran the GitHub Pages status poll and public homepage source check with narrow network escalation.
+- Files Changed: SOLUTIONS.md
+- Status: Workaround
+- Verification: GitHub Pages reported `built`, and the live homepage source showed the `G-M5VMC4W6X3` Google Analytics loader and config.
