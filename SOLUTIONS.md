@@ -573,3 +573,27 @@
 - Files Changed: SOLUTIONS.md
 - Status: Workaround
 - Verification: GitHub Pages reported `built`, and the live homepage source showed the `G-M5VMC4W6X3` Google Analytics loader and config.
+
+## [2026-06-25 08:40] Podcast Related-Link Patch Missed Dissertation Page
+- Problem: The first multi-file patch to add podcast-production related links failed because the dissertation editing page's related-service links were ordered differently than the patch expected.
+- Root Cause: The patch assumed identical related-link block ordering across all service pages.
+- Solution: Inspected the actual related-link snippets and reapplied a tighter patch tailored to each service page's current markup.
+- Files Changed: print-publication-consulting/index.html, sop-process-documentation/index.html, higher-education-communications/index.html, dissertation-thesis-editing/index.html, SOLUTIONS.md
+- Status: Resolved
+- Verification: Grep confirmed every existing service page now links to `../podcast-production/`.
+
+## [2026-06-25 08:40] Local Static Preview Loopback Check Failed
+- Problem: Starting `python3 -m http.server 4173` first failed with a port-binding permission error; after escalation, the server reported that it was running but command-side curl checks could not connect to `localhost`, `127.0.0.1`, or `::1`.
+- Root Cause: The managed command environment restricted local server binding and loopback reachability across the escalated process boundary.
+- Solution: Stopped the preview server and used file-based validation before deployment, with public GitHub Pages verification planned after push.
+- Files Changed: SOLUTIONS.md
+- Status: Workaround
+- Verification: The server was stopped cleanly, and structural validation continued with JSON-LD parsing, sitemap XML parsing, and local file/link checks.
+
+## [2026-06-25 08:40] Podcast Page Git Staging Blocked
+- Problem: `git add` failed with `Unable to create '.git/index.lock': Operation not permitted` while staging the podcast page release.
+- Root Cause: The managed permission profile treats Git metadata writes as requiring explicit escalation in this workspace.
+- Solution: Re-ran the same staging command with narrow escalation for the website files being committed.
+- Files Changed: SOLUTIONS.md
+- Status: Workaround
+- Verification: The escalated staging command completed successfully.
