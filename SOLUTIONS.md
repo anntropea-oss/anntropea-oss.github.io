@@ -585,10 +585,10 @@
 ## [2026-06-25 08:40] Local Static Preview Loopback Check Failed
 - Problem: Starting `python3 -m http.server 4173` first failed with a port-binding permission error; after escalation, the server reported that it was running but command-side curl checks could not connect to `localhost`, `127.0.0.1`, or `::1`.
 - Root Cause: The managed command environment restricted local server binding and loopback reachability across the escalated process boundary.
-- Solution: Stopped the preview server and used file-based validation before deployment, with public GitHub Pages verification planned after push.
+- Solution: Stopped the preview server, used file-based validation before deployment, and verified the deployed GitHub Pages URL after push.
 - Files Changed: SOLUTIONS.md
 - Status: Workaround
-- Verification: The server was stopped cleanly, and structural validation continued with JSON-LD parsing, sitemap XML parsing, and local file/link checks.
+- Verification: The server was stopped cleanly; structural validation continued with JSON-LD parsing, sitemap XML parsing, and local file/link checks; after deployment, the public podcast page and sitemap returned the expected podcast-production content.
 
 ## [2026-06-25 08:40] Podcast Page Git Staging Blocked
 - Problem: `git add` failed with `Unable to create '.git/index.lock': Operation not permitted` while staging the podcast page release.
