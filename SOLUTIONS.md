@@ -629,3 +629,11 @@
 - Files Changed: index.html, communications-strategy-consultant/index.html, print-publication-consulting/index.html, sop-process-documentation/index.html, higher-education-communications/index.html, dissertation-thesis-editing/index.html, podcast-production/index.html, SOLUTIONS.md
 - Status: Resolved
 - Verification: Local grep confirmed all seven HTML pages include the `Strategy` nav link, and local href/src validation confirmed internal links resolve.
+
+## [2026-07-31 19:55] Homepage Sitemap Date Set One Day Ahead
+- Problem: While adding the new Substack publication link, the homepage sitemap `lastmod` was briefly set to `2026-08-01`, one day ahead of the current site update date.
+- Root Cause: The edit used the next calendar date instead of the current local date.
+- Solution: Corrected the homepage sitemap `lastmod` back to `2026-07-31`.
+- Files Changed: sitemap.xml, SOLUTIONS.md
+- Status: Resolved
+- Verification: Re-read the system date as `2026-07-31 19:55` and updated `sitemap.xml` to match.
