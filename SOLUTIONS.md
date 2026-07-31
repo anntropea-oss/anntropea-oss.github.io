@@ -621,3 +621,11 @@
 - Files Changed: SOLUTIONS.md
 - Status: Resolved
 - Verification: The quoted local curl command returned the new `.ethos`, `.ethos-grid`, and `.ethos-card` CSS rules.
+
+## [2026-07-31 19:50] Communications Strategy Page Missing From Top Navigation
+- Problem: The new communications strategy landing page was published and linked from the consulting card and related-service lists, but it did not appear in the primary navigation menu.
+- Root Cause: The SEO page launch updated body links and sitemap entries but did not add a nav item to the shared static header markup on each HTML page.
+- Solution: Added a `Strategy` navigation link to the homepage, all service pages, and the communications strategy page header.
+- Files Changed: index.html, communications-strategy-consultant/index.html, print-publication-consulting/index.html, sop-process-documentation/index.html, higher-education-communications/index.html, dissertation-thesis-editing/index.html, podcast-production/index.html, SOLUTIONS.md
+- Status: Resolved
+- Verification: Local grep confirmed all seven HTML pages include the `Strategy` nav link, and local href/src validation confirmed internal links resolve.
