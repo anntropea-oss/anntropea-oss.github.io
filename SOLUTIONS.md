@@ -597,3 +597,27 @@
 - Files Changed: SOLUTIONS.md
 - Status: Workaround
 - Verification: The escalated staging command completed successfully.
+
+## [2026-07-24 11:59] CSS Color Search Pattern Parsed as Flag
+- Problem: The initial `rg` command to find the website green failed with `unrecognized flag --forest|green|#[0-9a-fA-F]{6}`.
+- Root Cause: The search pattern began with `--forest`, so ripgrep interpreted it as a command-line flag.
+- Solution: Re-ran the search with `rg -n -- "..."` so the pattern was treated as text.
+- Files Changed: SOLUTIONS.md
+- Status: Resolved
+- Verification: The corrected search returned `--forest: #214d43` from `styles.css`.
+
+## [2026-07-31 19:38] Ethos Patch Expected Older Structured-Data Context
+- Problem: The first patch to add the new ethos navigation link and stylesheet cache-bust failed because the expected structured-data link block did not match the current homepage markup exactly.
+- Root Cause: The patch combined multiple edits and assumed the JSON-LD `significantLink` list context without first reading the exact current block.
+- Solution: Re-read the relevant homepage head and navigation snippets, then applied a tighter patch for the `#ethos` link and stylesheet version update.
+- Files Changed: index.html, print-publication-consulting/index.html, sop-process-documentation/index.html, higher-education-communications/index.html, dissertation-thesis-editing/index.html, podcast-production/index.html, SOLUTIONS.md
+- Status: Resolved
+- Verification: Grep confirmed the `#ethos` link is present in navigation and JSON-LD, and all HTML pages reference `styles.css?v=20260731-1`.
+
+## [2026-07-31 19:38] CSS Smoke-Test URL Needed Quoting
+- Problem: The local CSS smoke-test command failed with `zsh: no matches found` when requesting `styles.css?v=20260731-1`.
+- Root Cause: The unquoted `?` in the URL was interpreted by zsh as a filename glob pattern.
+- Solution: Re-ran the curl command with the URL quoted.
+- Files Changed: SOLUTIONS.md
+- Status: Resolved
+- Verification: The quoted local curl command returned the new `.ethos`, `.ethos-grid`, and `.ethos-card` CSS rules.

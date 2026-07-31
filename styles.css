@@ -432,6 +432,49 @@ h3 {
   margin-top: auto;
 }
 
+.ethos {
+  background: var(--ink);
+  color: #fff;
+  border-block: 1px solid var(--ink);
+}
+
+.ethos .kicker {
+  color: #f4d28d;
+}
+
+.ethos .split-heading > p {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.ethos h2 {
+  max-width: 12ch;
+}
+
+.ethos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ethos-card {
+  min-height: 330px;
+  padding: 24px;
+  background: #202927;
+}
+
+.ethos-card h3 {
+  max-width: 18ch;
+  color: #fff;
+}
+
+.ethos-card p {
+  margin: 28px 0 0;
+  color: rgba(255, 255, 255, 0.74);
+  line-height: 1.6;
+}
+
 .service-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -744,6 +787,7 @@ h3 {
   .portfolio-grid,
   .qualification-grid,
   .repo-grid,
+  .ethos-grid,
   .speaking-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -834,6 +878,7 @@ h3 {
   .portfolio-grid,
   .qualification-grid,
   .repo-grid,
+  .ethos-grid,
   .speaking-grid {
     grid-template-columns: 1fr;
   }
