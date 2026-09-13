@@ -645,3 +645,11 @@
 - Files Changed: assets/brand/substack-publication-lockup.png, assets/brand/substack-publication-mark.png, SOLUTIONS.md
 - Status: Resolved
 - Verification: `sips` confirmed the final lockup PNG is 1800 by 520 and the square mark PNG is 1024 by 1024; visual inspection confirmed the lockup is not cut off.
+
+## [2026-09-13 12:03] Minimal Logo Preview Export Created Duplicate Thumbnail
+- Problem: Quick Look generated an extra `substack-logo-minimal-previews.svg.png` file while exporting the minimal Substack logo preview sheet.
+- Root Cause: `qlmanage` appends `.png` to the full SVG filename by default, while the preview workflow also copied that output to the cleaner `substack-logo-minimal-previews.png` name.
+- Solution: Removed the duplicate `.svg.png` thumbnail and kept the clean SVG source plus PNG preview file.
+- Files Changed: assets/brand/substack-logo-minimal-previews.png, assets/brand/substack-logo-minimal-previews.svg, SOLUTIONS.md
+- Status: Resolved
+- Verification: Directory listing showed only the intended minimal preview SVG and PNG remained.

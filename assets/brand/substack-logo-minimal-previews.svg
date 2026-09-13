@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1250" role="img" aria-labelledby="title desc">
+  <title id="title">Minimal Substack logo preview concepts for Ann Tropea</title>
+  <desc id="desc">Four minimal AT logo directions using the website's operating ethos palette and editorial visual language.</desc>
+  <rect width="1800" height="1250" fill="#f7f4ed"/>
+  <g font-family="Inter, Arial, sans-serif" fill="#18201f">
+    <text x="90" y="96" font-size="44" font-weight="800">Substack logo directions</text>
+    <text x="90" y="148" font-size="24" fill="#5a6460">Minimal marks borrowing from the operating ethos section: ink, forest, cream, editorial rules, no ornament.</text>
+  </g>
+
+  <defs>
+    <style>
+      .label { font: 800 24px Inter, Arial, sans-serif; letter-spacing: 0; }
+      .note { font: 500 18px Inter, Arial, sans-serif; }
+      .serif { font-family: Georgia, "Times New Roman", serif; font-weight: 700; }
+      .sans { font-family: Inter, Arial, sans-serif; font-weight: 900; }
+    </style>
+  </defs>
+
+  <!-- Concept 1 -->
+  <g transform="translate(90 220)">
+    <rect width="760" height="420" rx="10" fill="#18201f"/>
+    <rect x="56" y="56" width="308" height="308" fill="none" stroke="#f7f4ed" stroke-width="8"/>
+    <text class="serif" x="100" y="264" font-size="164" fill="#f7f4ed">AT</text>
+    <path d="M104 292 H318" stroke="#a64835" stroke-width="12" stroke-linecap="square"/>
+    <path d="M420 132 H656" stroke="#f7f4ed" stroke-width="5"/>
+    <path d="M420 184 H604" stroke="#f7f4ed" stroke-width="5" opacity=".72"/>
+    <path d="M420 236 H670" stroke="#f7f4ed" stroke-width="5" opacity=".72"/>
+    <path d="M420 288 H546" stroke="#c89237" stroke-width="8"/>
+    <text class="label" x="0" y="472" fill="#18201f">01 / The margin edit</text>
+    <text class="note" x="0" y="508" fill="#5a6460">Closest to operating ethos: stark, editorial, serious.</text>
+  </g>
+
+  <!-- Concept 2 -->
+  <g transform="translate(950 220)">
+    <rect width="760" height="420" rx="10" fill="#f7f4ed" stroke="#18201f" stroke-width="8"/>
+    <rect x="62" y="64" width="256" height="256" fill="#214d43"/>
+    <text class="sans" x="92" y="236" font-size="124" fill="#f7f4ed">AT</text>
+    <path d="M352 128 H658" stroke="#18201f" stroke-width="8"/>
+    <path d="M352 184 H582" stroke="#18201f" stroke-width="8"/>
+    <path d="M352 240 H648" stroke="#a64835" stroke-width="12"/>
+    <path d="M352 296 H506" stroke="#18201f" stroke-width="8" opacity=".55"/>
+    <text class="label" x="0" y="472" fill="#18201f">02 / Useful, not polished</text>
+    <text class="note" x="0" y="508" fill="#5a6460">Marries the main site palette with the ethos grid.</text>
+  </g>
+
+  <!-- Concept 3 -->
+  <g transform="translate(90 760)">
+    <rect width="760" height="420" rx="10" fill="#202927"/>
+    <path d="M112 100 V320 H312" fill="none" stroke="#f7f4ed" stroke-width="14"/>
+    <text class="serif" x="170" y="286" font-size="190" fill="#f7f4ed">A</text>
+    <text class="serif" x="330" y="286" font-size="190" fill="#f7f4ed">T</text>
+    <path d="M124 330 C250 304 388 304 548 330" fill="none" stroke="#a64835" stroke-width="14" stroke-linecap="round"/>
+    <circle cx="610" cy="156" r="12" fill="#c89237"/>
+    <circle cx="650" cy="156" r="12" fill="#c89237"/>
+    <circle cx="690" cy="156" r="12" fill="#c89237"/>
+    <text class="label" x="0" y="472" fill="#18201f">03 / Bracket the argument</text>
+    <text class="note" x="0" y="508" fill="#5a6460">More literary: editing, framing, margin logic.</text>
+  </g>
+
+  <!-- Concept 4 -->
+  <g transform="translate(950 760)">
+    <rect width="760" height="420" rx="10" fill="#fffdf8" stroke="#ded8ca" stroke-width="4"/>
+    <rect x="86" y="84" width="588" height="252" fill="#18201f"/>
+    <text class="sans" x="144" y="258" font-size="146" fill="#f7f4ed">AT</text>
+    <path d="M360 88 V332" stroke="#f7f4ed" stroke-width="4" opacity=".36"/>
+    <path d="M486 168 H630" stroke="#f7f4ed" stroke-width="9"/>
+    <path d="M486 216 H596" stroke="#f7f4ed" stroke-width="9" opacity=".68"/>
+    <path d="M486 264 H642" stroke="#a64835" stroke-width="12"/>
+    <rect x="108" y="354" width="110" height="14" fill="#214d43"/>
+    <rect x="236" y="354" width="48" height="14" fill="#c89237"/>
+    <text class="label" x="0" y="472" fill="#18201f">04 / Independent page</text>
+    <text class="note" x="0" y="508" fill="#5a6460">More publication-like: masthead, proof, hard edit.</text>
+  </g>
+</svg>
