@@ -62,20 +62,46 @@ a {
 }
 
 .brand {
-  gap: 10px;
+  gap: 12px;
   font-weight: 800;
   text-decoration: none;
 }
 
 .brand-mark {
+  position: relative;
   display: grid;
   place-items: center;
-  width: 38px;
-  height: 38px;
-  color: var(--ink);
-  background: var(--panel);
-  border-radius: 2px;
-  font-size: 0.88rem;
+  width: 42px;
+  height: 42px;
+  overflow: hidden;
+  color: var(--paper);
+  background: var(--ink);
+  border: 2px solid var(--paper);
+  border-radius: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.brand-mark::before,
+.brand-mark::after {
+  position: absolute;
+  content: "";
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  height: 3px;
+  background: var(--brick);
+}
+
+.brand-mark::after {
+  left: 25px;
+  right: 8px;
+  bottom: 13px;
+  height: 2px;
+  background: var(--gold);
 }
 
 .nav-links {
