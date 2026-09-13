@@ -653,3 +653,51 @@
 - Files Changed: assets/brand/substack-logo-minimal-previews.png, assets/brand/substack-logo-minimal-previews.svg, SOLUTIONS.md
 - Status: Resolved
 - Verification: Directory listing showed only the intended minimal preview SVG and PNG remained.
+
+## [2026-09-13 12:14] Visualization Skill Read Truncated
+- Problem: The initial attempt to read the full visualization skill instructions produced output larger than the tool context could safely display.
+- Root Cause: The instruction file was 514 lines, and the single read request exceeded the practical output size for review.
+- Solution: Re-read the skill instructions in smaller line ranges before creating the website redesign preview sheets.
+- Files Changed: SOLUTIONS.md
+- Status: Resolved
+- Verification: Confirmed the file length with `wc -l` and successfully read lines 1-514 in four smaller chunks.
+
+## [2026-09-13 12:15] Preview Browser Automation Unavailable
+- Problem: Playwright-based layout verification could not be run for the website redesign preview sheet because the local Node environment could not resolve the `playwright` package.
+- Root Cause: Playwright is not installed in the current project environment.
+- Solution: Rendered the visualization fragment into a standalone HTML file with the bundled visualization renderer and kept the preview CSS responsive for desktop and narrow layouts.
+- Files Changed: SOLUTIONS.md
+- Status: Workaround
+- Verification: The renderer completed successfully and produced `website-redesign-preview-sheets-rendered.html`.
+
+## [2026-09-13 13:35] In-App Preview Tab Handle Went Stale
+- Problem: The in-app browser verification step failed with a stale tab-session message while checking the locally served redesigned homepage.
+- Root Cause: The previously opened in-app browser tab was no longer attached to the current browser session.
+- Solution: Reconnected to the in-app browser state, opened a fresh `http://localhost:4173/` preview tab, and marked it as the deliverable preview.
+- Files Changed: SOLUTIONS.md
+- Status: Resolved
+- Verification: The refreshed tab loaded the homepage, reported the new hero image source, confirmed the image completed loading, and showed zero horizontal page overflow.
+
+## [2026-09-13 13:41] Hero Copy Readability and Pastel Background Drift
+- Problem: After replacing the homepage hero image, the hero text became harder to read, and several redesigned sections used too many soft-tinted backgrounds, including a pink-ish consulting wash.
+- Root Cause: The new image introduced a darker green table area behind the headline, while the first redesign pass used multiple lightly tinted section backgrounds and a brick-colored background accent.
+- Solution: Strengthened the hero and service-page overlays, removed the brick/pink wash, and standardized non-dark section backgrounds to the existing cream paper and warm white panel colors.
+- Files Changed: styles.css, index.html, communications-strategy-consultant/index.html, dissertation-thesis-editing/index.html, higher-education-communications/index.html, podcast-production/index.html, print-publication-consulting/index.html, sop-process-documentation/index.html, SOLUTIONS.md
+- Status: Resolved
+- Verification: Local browser verification confirmed the updated `styles.css?v=20260913-2` loaded, the hero image loaded successfully, the portfolio/speaking/consulting backgrounds are now cream or warm white, and the page has zero horizontal overflow.
+
+## [2026-09-13 13:45] Homepage Hero Body Copy Still Crossed Busy Image
+- Problem: The homepage hero body copy was still difficult to read because the text extended into the busier laptop and marked-up-paper area of the new hero image.
+- Root Cause: The overlay improved contrast but did not create a bounded readable text zone, and the paragraph width still allowed lines to run too far across the image.
+- Solution: Added a translucent cream editorial field behind the hero content, narrowed the hero and service hero content blocks, limited hero body copy width to `34rem`, and strengthened the left-side overlay.
+- Files Changed: styles.css, index.html, communications-strategy-consultant/index.html, dissertation-thesis-editing/index.html, higher-education-communications/index.html, podcast-production/index.html, print-publication-consulting/index.html, sop-process-documentation/index.html, SOLUTIONS.md
+- Status: Resolved
+- Verification: Local browser verification confirmed `styles.css?v=20260913-3` loaded, the desktop hero content block renders at 680px with a 544px copy width, the mobile hero content block renders at 350px with a 308px copy width, and both desktop and mobile checks showed zero horizontal page overflow.
+
+## [2026-09-13 13:45] Browser REPL Constant Redeclaration Warning
+- Problem: The browser verification tool warned that `report` had already been declared as a constant in the persistent REPL session.
+- Root Cause: A previous browser-check command used `const report`, and the persistent JavaScript session retained that binding.
+- Solution: Used uniquely named `let` bindings in the follow-up mobile verification command to avoid reusing the same constant name.
+- Files Changed: SOLUTIONS.md
+- Status: Resolved
+- Verification: The follow-up mobile verification ran successfully without the constant redeclaration warning.
