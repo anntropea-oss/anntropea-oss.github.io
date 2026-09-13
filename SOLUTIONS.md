@@ -637,3 +637,11 @@
 - Files Changed: sitemap.xml, SOLUTIONS.md
 - Status: Resolved
 - Verification: Re-read the system date as `2026-07-31 19:55` and updated `sitemap.xml` to match.
+
+## [2026-09-13 11:58] Horizontal Logo Export Included Square Padding
+- Problem: Quick Look exported the horizontal Substack logo SVG as an 1800 by 1800 PNG with large vertical padding instead of preserving the intended horizontal lockup aspect ratio.
+- Root Cause: `qlmanage` creates square thumbnails for SVG previews rather than exact canvas-size raster exports.
+- Solution: Cropped the generated thumbnail with `sips` to create a clean 1800 by 520 horizontal PNG and copied the square mark export to a friendly `.png` filename.
+- Files Changed: assets/brand/substack-publication-lockup.png, assets/brand/substack-publication-mark.png, SOLUTIONS.md
+- Status: Resolved
+- Verification: `sips` confirmed the final lockup PNG is 1800 by 520 and the square mark PNG is 1024 by 1024; visual inspection confirmed the lockup is not cut off.

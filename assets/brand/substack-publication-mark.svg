@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">Ann Tropea publication mark</title>
+  <desc id="desc">A square AT monogram in forest green on a cream background with editorial rule marks in brick and gold.</desc>
+  <rect width="1024" height="1024" fill="#f7f4ed"/>
+  <rect x="72" y="72" width="880" height="880" rx="44" fill="#fffdf8" stroke="#214d43" stroke-width="22"/>
+  <g fill="#214d43" font-family="Georgia, 'Times New Roman', serif" font-weight="700">
+    <text x="258" y="650" font-size="462">A</text>
+    <text x="520" y="650" font-size="462">T</text>
+  </g>
+  <path d="M196 650 C330 626 487 625 642 651 C719 664 790 661 850 636" fill="none" stroke="#a64835" stroke-width="34" stroke-linecap="round"/>
+  <g fill="#c89237">
+    <rect x="783" y="304" width="36" height="116" rx="18"/>
+    <rect x="840" y="351" width="116" height="36" rx="18" transform="rotate(-34 898 369)"/>
+    <rect x="851" y="452" width="116" height="36" rx="18"/>
+  </g>
+  <g fill="#a64835">
+    <rect x="120" y="450" width="106" height="26" rx="13"/>
+    <rect x="120" y="502" width="154" height="26" rx="13"/>
+    <rect x="226" y="410" width="28" height="160" rx="14"/>
+  </g>
+</svg>

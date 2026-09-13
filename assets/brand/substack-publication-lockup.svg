@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 520" role="img" aria-labelledby="title desc">
+  <title id="title">Ann Tropea publication logo</title>
+  <desc id="desc">A horizontal Ann Tropea publication logo with an AT monogram, forest green type, and editorial rule marks.</desc>
+  <rect width="1800" height="520" fill="#f7f4ed"/>
+  <g transform="translate(82 70)">
+    <rect width="380" height="380" rx="28" fill="#fffdf8" stroke="#214d43" stroke-width="14"/>
+    <g fill="#214d43" font-family="Georgia, 'Times New Roman', serif" font-weight="700">
+      <text x="86" y="255" font-size="178">A</text>
+      <text x="198" y="255" font-size="178">T</text>
+    </g>
+    <path d="M72 260 C132 248 202 249 270 262 C305 269 334 266 358 254" fill="none" stroke="#a64835" stroke-width="16" stroke-linecap="round"/>
+    <rect x="70" y="162" width="56" height="12" rx="6" fill="#a64835"/>
+    <rect x="70" y="186" width="86" height="12" rx="6" fill="#a64835"/>
+    <rect x="126" y="144" width="14" height="68" rx="7" fill="#a64835"/>
+    <rect x="322" y="142" width="16" height="56" rx="8" fill="#c89237"/>
+    <rect x="342" y="172" width="48" height="16" rx="8" fill="#c89237" transform="rotate(-34 366 180)"/>
+  </g>
+  <g transform="translate(540 145)" fill="#214d43">
+    <text x="0" y="98" font-family="Georgia, 'Times New Roman', serif" font-size="92" font-weight="700">Ann Tropea</text>
+    <text x="4" y="174" font-family="Inter, Arial, sans-serif" font-size="36" font-weight="800" letter-spacing="0">COMMUNICATIONS, MEDIA, AI, AND EDITORIAL JUDGMENT</text>
+    <path d="M4 216 H1040" stroke="#a64835" stroke-width="10" stroke-linecap="round"/>
+  </g>
+</svg>
