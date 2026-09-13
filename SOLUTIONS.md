@@ -701,3 +701,11 @@
 - Files Changed: SOLUTIONS.md
 - Status: Resolved
 - Verification: The follow-up mobile verification ran successfully without the constant redeclaration warning.
+
+## [2026-09-13 13:55] GitHub Pages Homepage Cache Lag
+- Problem: Immediately after pushing the header mark update, the public CSS file showed the new brand mark styles but the public homepage HTML did not yet show the new stylesheet cache-bust value.
+- Root Cause: GitHub Pages edge caching briefly served the prior homepage HTML after the push completed.
+- Solution: Waited briefly and rechecked the public homepage with a no-cache request.
+- Files Changed: SOLUTIONS.md
+- Status: Resolved
+- Verification: The public homepage subsequently returned `styles.css?v=20260913-4`, confirming the deployed HTML caught up with the pushed commit.
